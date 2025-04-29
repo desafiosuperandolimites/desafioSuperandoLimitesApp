@@ -1,0 +1,20 @@
+# Use a imagem oficial do Node.js como base
+FROM node:latest
+
+# Defina o diretório de trabalho dentro do contêiner
+WORKDIR /usr/src/app
+
+# Copie o arquivo package.json e package-lock.json para o diretório de trabalho
+COPY package*.json ./
+
+# Instale as dependências
+RUN npm install
+
+# Copie o restante do código da aplicação para o diretório de trabalho
+COPY . .
+
+# Exponha a porta que a aplicação vai rodar
+EXPOSE 3000
+
+# Comando para rodar as migrações e depois iniciar a aplicação
+CMD ["sh", "-c", "npx sequelize-cli db:migrate && npm start"]

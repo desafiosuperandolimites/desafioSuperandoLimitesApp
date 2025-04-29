@@ -1,0 +1,166 @@
+'use strict';
+
+const CategoriaBicicletaTipoEnum = require('../enums/CategoriaBicicletaTipoEnum');
+
+module.exports = {
+  up: async (queryInterface, Sequelize) => {
+    await queryInterface.bulkInsert('CATEGORIA_BICICLETA', [
+      {
+        DISTANCIA: CategoriaBicicletaTipoEnum.INICIANTE_150KM.distance,
+        DESCRICAO: CategoriaBicicletaTipoEnum.INICIANTE_150KM.description,
+        CHAVE: CategoriaBicicletaTipoEnum.INICIANTE_150KM.key,
+        SITUACAO: true,
+        CRIADO_EM: new Date(),
+        ATUALIZADO_EM: new Date(),
+      },
+      {
+        DISTANCIA: CategoriaBicicletaTipoEnum.INICIANTE_200KM.distance,
+        DESCRICAO: CategoriaBicicletaTipoEnum.INICIANTE_200KM.description,
+        CHAVE: CategoriaBicicletaTipoEnum.INICIANTE_200KM.key,
+        SITUACAO: true,
+        CRIADO_EM: new Date(),
+        ATUALIZADO_EM: new Date(),
+      },
+      {
+        DISTANCIA: CategoriaBicicletaTipoEnum.GUERREIRA_250KM.distance,
+        DESCRICAO: CategoriaBicicletaTipoEnum.GUERREIRA_250KM.description,
+        CHAVE: CategoriaBicicletaTipoEnum.GUERREIRA_250KM.key,
+        SITUACAO: true,
+        CRIADO_EM: new Date(),
+        ATUALIZADO_EM: new Date(),
+      },
+      {
+        DISTANCIA: CategoriaBicicletaTipoEnum.GUERREIRA_300KM.distance,
+        DESCRICAO: CategoriaBicicletaTipoEnum.GUERREIRA_300KM.description,
+        CHAVE: CategoriaBicicletaTipoEnum.GUERREIRA_300KM.key,
+        SITUACAO: true,
+        CRIADO_EM: new Date(),
+        ATUALIZADO_EM: new Date(),
+      },
+      {
+        DISTANCIA: CategoriaBicicletaTipoEnum.DETERMINADA_350KM.distance,
+        DESCRICAO: CategoriaBicicletaTipoEnum.DETERMINADA_350KM.description,
+        CHAVE: CategoriaBicicletaTipoEnum.DETERMINADA_350KM.key,
+        SITUACAO: true,
+        CRIADO_EM: new Date(),
+        ATUALIZADO_EM: new Date(),
+      },
+      {
+        DISTANCIA: CategoriaBicicletaTipoEnum.DETERMINADA_400KM.distance,
+        DESCRICAO: CategoriaBicicletaTipoEnum.DETERMINADA_400KM.description,
+        CHAVE: CategoriaBicicletaTipoEnum.DETERMINADA_400KM.key,
+        SITUACAO: true,
+        CRIADO_EM: new Date(),
+        ATUALIZADO_EM: new Date(),
+      },
+      {
+        DISTANCIA: CategoriaBicicletaTipoEnum.BRUTA_450KM.distance,
+        DESCRICAO: CategoriaBicicletaTipoEnum.BRUTA_450KM.description,
+        CHAVE: CategoriaBicicletaTipoEnum.BRUTA_450KM.key,
+        SITUACAO: true,
+        CRIADO_EM: new Date(),
+        ATUALIZADO_EM: new Date(),
+      },
+      {
+        DISTANCIA: CategoriaBicicletaTipoEnum.BRUTA_500KM.distance,
+        DESCRICAO: CategoriaBicicletaTipoEnum.BRUTA_500KM.description,
+        CHAVE: CategoriaBicicletaTipoEnum.BRUTA_500KM.key,
+        SITUACAO: true,
+        CRIADO_EM: new Date(),
+        ATUALIZADO_EM: new Date(),
+      },
+      {
+        DISTANCIA: CategoriaBicicletaTipoEnum.DETERMINADA_600KM.distance,
+        DESCRICAO: CategoriaBicicletaTipoEnum.DETERMINADA_600KM.description,
+        CHAVE: CategoriaBicicletaTipoEnum.DETERMINADA_600KM.key,
+        SITUACAO: true,
+        CRIADO_EM: new Date(),
+        ATUALIZADO_EM: new Date(),
+      },
+      {
+        DISTANCIA: CategoriaBicicletaTipoEnum.SUPERACAO_700KM.distance,
+        DESCRICAO: CategoriaBicicletaTipoEnum.SUPERACAO_700KM.description,
+        CHAVE: CategoriaBicicletaTipoEnum.SUPERACAO_700KM.key,
+        SITUACAO: true,
+        CRIADO_EM: new Date(),
+        ATUALIZADO_EM: new Date(),
+      },
+      {
+        DISTANCIA: CategoriaBicicletaTipoEnum.INSANA_800KM.distance,
+        DESCRICAO: CategoriaBicicletaTipoEnum.INSANA_800KM.description,
+        CHAVE: CategoriaBicicletaTipoEnum.INSANA_800KM.key,
+        SITUACAO: true,
+        CRIADO_EM: new Date(),
+        ATUALIZADO_EM: new Date(),
+      },
+      {
+        DISTANCIA: CategoriaBicicletaTipoEnum.TOP_DAS_GALAXIAS_1000KM.distance,
+        DESCRICAO: CategoriaBicicletaTipoEnum.TOP_DAS_GALAXIAS_1000KM.description,
+        CHAVE: CategoriaBicicletaTipoEnum.TOP_DAS_GALAXIAS_1000KM.key,
+        SITUACAO: true,
+        CRIADO_EM: new Date(),
+        ATUALIZADO_EM: new Date(),
+      },
+      {
+        DISTANCIA: CategoriaBicicletaTipoEnum.AVANTE_SEMPRE_1200KM.distance,
+        DESCRICAO: CategoriaBicicletaTipoEnum.AVANTE_SEMPRE_1200KM.description,
+        CHAVE: CategoriaBicicletaTipoEnum.AVANTE_SEMPRE_1200KM.key,
+        SITUACAO: true,
+        CRIADO_EM: new Date(),
+        ATUALIZADO_EM: new Date(),
+      },
+      {
+        DISTANCIA: CategoriaBicicletaTipoEnum.COMANDANTE_1500KM.distance,
+        DESCRICAO: CategoriaBicicletaTipoEnum.COMANDANTE_1500KM.description,
+        CHAVE: CategoriaBicicletaTipoEnum.COMANDANTE_1500KM.key,
+        SITUACAO: true,
+        CRIADO_EM: new Date(),
+        ATUALIZADO_EM: new Date(),
+      },
+      {
+        DISTANCIA: CategoriaBicicletaTipoEnum.AVANCADA_1600KM.distance,
+        DESCRICAO: CategoriaBicicletaTipoEnum.AVANCADA_1600KM.description,
+        CHAVE: CategoriaBicicletaTipoEnum.AVANCADA_1600KM.key,
+        SITUACAO: true,
+        CRIADO_EM: new Date(),
+        ATUALIZADO_EM: new Date(),
+      },
+      {
+        DISTANCIA: CategoriaBicicletaTipoEnum.PROFESSOR_1800KM.distance,
+        DESCRICAO: CategoriaBicicletaTipoEnum.PROFESSOR_1800KM.description,
+        CHAVE: CategoriaBicicletaTipoEnum.PROFESSOR_1800KM.key,
+        SITUACAO: true,
+        CRIADO_EM: new Date(),
+        ATUALIZADO_EM: new Date(),
+      },
+      {
+        DISTANCIA: CategoriaBicicletaTipoEnum.CAVALHEIRO_2000KM.distance,
+        DESCRICAO: CategoriaBicicletaTipoEnum.CAVALHEIRO_2000KM.description,
+        CHAVE: CategoriaBicicletaTipoEnum.CAVALHEIRO_2000KM.key,
+        SITUACAO: true,
+        CRIADO_EM: new Date(),
+        ATUALIZADO_EM: new Date(),
+      },
+      {
+        DISTANCIA: CategoriaBicicletaTipoEnum.SEM_LIMITES_2500KM.distance,
+        DESCRICAO: CategoriaBicicletaTipoEnum.SEM_LIMITES_2500KM.description,
+        CHAVE: CategoriaBicicletaTipoEnum.SEM_LIMITES_2500KM.key,
+        SITUACAO: true,
+        CRIADO_EM: new Date(),
+        ATUALIZADO_EM: new Date(),
+      },
+      {
+        DISTANCIA: CategoriaBicicletaTipoEnum.ESPECIAL_3000KM.distance,
+        DESCRICAO: CategoriaBicicletaTipoEnum.ESPECIAL_3000KM.description,
+        CHAVE: CategoriaBicicletaTipoEnum.ESPECIAL_3000KM.key,
+        SITUACAO: true,
+        CRIADO_EM: new Date(),
+        ATUALIZADO_EM: new Date(),
+      }
+    ]);
+  },
+
+  down: async (queryInterface, Sequelize) => {
+    await queryInterface.bulkDelete('CATEGORIA_BICICLETA', null, {});
+  },
+};

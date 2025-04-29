@@ -1,0 +1,2 @@
+C:/Users/AnalistadeHardware/Desktop/Vinicius/SUPERANDO/superando_limites/frontend/android/app/.cxx/RelWithDebInfo/334e5i51/x86_64/CMakeFiles/edit_cache.dir
+C:/Users/AnalistadeHardware/Desktop/Vinicius/SUPERANDO/superando_limites/frontend/android/app/.cxx/RelWithDebInfo/334e5i51/x86_64/CMakeFiles/rebuild_cache.dir

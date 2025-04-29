@@ -1,0 +1,41 @@
+version: '3.8'  # Define a versão do arquivo docker-compose
+
+services:  # Início da definição dos serviços que serão usados
+
+  db:  # Nome do serviço para o banco de dados PostgreSQL
+    image: postgres:latest  # Especifica a imagem do PostgreSQL a ser usada, última versão disponível
+    container_name: postgres_container  # Nome do contêiner para facilitar a referência
+    environment:  # Variáveis de ambiente para configuração do PostgreSQL
+      DB_USER: ${DB_USER}  # Nome do usuário do banco de dados
+      DB_PASSWORD: ${DB_PASSWORD}  # Senha para o usuário do banco de dados
+      DB_NAME: ${DB_NAME}  # Nome do banco de dados a ser criado
+      POSTGRES_PASSWORD: ${DB_PASSWORD}  # Nome do banco de dados a ser criado
+      POSTGRES_DB: ${DB_NAME}  # Nome do banco de dados a ser criado
+    ports:  # Mapeamento de portas para o serviço PostgreSQL
+      - "5432:5432"  # Mapeia a porta 5432 do contêiner para a porta 5432 do host
+    volumes:  # Volumes para persistência de dados
+      - pgdata:/var/lib/postgresql/data  # Monta o volume pgdata para armazenar os dados do PostgreSQL
+
+  node:  # Nome do serviço para a aplicação Node.js
+    build:  # Especifica que este serviço será construído usando um Dockerfile
+      context: .  # Diretório onde o Dockerfile está localizado (raiz do projeto)
+      dockerfile: Dockerfile  # Nome do Dockerfile
+    container_name: node_container  # Nome do contêiner para facilitar a referência
+    env_file:  # Adiciona esta linha
+      - .env 
+    working_dir: /usr/src/app  # Define o diretório de trabalho dentro do contêiner
+    volumes:  # Volumes para sincronizar o código fonte com o contêiner
+      - .:/usr/src/app  # Monta o diretório backend local no diretório de trabalho do contêiner
+    ports:  # Mapeamento de portas para o serviço Node.js
+      - "3000:3000"  # Mapeia a porta 3000 do contêiner para a porta 3000 do host
+    depends_on:  # Define dependências de serviço para ordem de inicialização
+      - db  # O serviço Node.js espera o serviço de banco de dados estar pronto
+    environment:  # Variáveis de ambiente para a aplicação Node.js
+      NODE_ENV: ${NODE_ENV}  # Define o ambiente de execução como desenvolvimento
+      DB_HOST: ${DB_HOST}  # Define o host do banco de dados
+      GOOGLE_APPLICATION_CREDENTIALS: ${GOOGLE_APPLICATION_CREDENTIALS}  # Define o GOOGLE_APPLICATION_CREDENTIALS
+    command: sh -c "npx sequelize-cli db:migrate && npm start"  # Comando para rodar as migrações e iniciar a aplicação
+
+volumes:  # Definição de volumes para persistência de dados entre execuções de contêineres
+  pgdata:  # Nome do volume que será usado pelo serviço de banco de dados PostgreSQL
+    name: superando_limites_banco  # Nome específico do volume para facilitar a referência

@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Redefinir Senha - Superando Limites</title>
+        <link
+            href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap"
+            rel="stylesheet">
+        <link rel="stylesheet" href="styles.css">
+    </head>
+
+    <body>
+        <div class="container">
+            <div style="text-align: center; margin-bottom: 20px;">
+                <img src="logo.png" alt="Logo Superando Limites"
+                    style="max-width: 70%; height: auto;">
+            </div>
+
+            <h1>Redefinir Senha</h1>
+            <form id="reset-form">
+                <div class="input-group">
+                    <label for="password">Nova Senha:</label>
+                    <input type="password" id="password" name="password"
+                        required>
+                    <div id="password-error" class="error-message"></div>
+                </div>
+
+                <div class="input-group">
+                    <label for="confirmPassword">Confirmar Nova Senha:</label>
+                    <input type="password" id="confirmPassword"
+                        name="confirmPassword" required>
+                    <div id="confirmPassword-error" class="error-message"></div>
+                </div>
+
+                <button type="submit" class="btn">Redefinir Senha</button>
+            </form>
+            <div class="footer">
+                <p>&copy; 2024 Superando Limites</p>
+            </div>
+        </div>
+
+        <script>
+            document.addEventListener('DOMContentLoaded', function () {
+                const token = window.location.pathname.split("/").pop();
+
+                document.getElementById('reset-form').addEventListener('submit', async function (event) {
+                    event.preventDefault(); // Prevent default form submission
+
+                    const password = document.getElementById('password').value;
+                    const confirmPassword = document.getElementById('confirmPassword').value;
+                    const passwordError = document.getElementById('password-error');
+                    const confirmPasswordError = document.getElementById('confirmPassword-error');
+
+                    // Reset error messages
+                    passwordError.style.display = 'none';
+                    confirmPasswordError.style.display = 'none';
+
+                    // Validate password
+                    if (password.length < 8 ||
+                        !/[A-Z]/.test(password) ||
+                        !/[a-z]/.test(password) ||
+                        !/[0-9]/.test(password) ||
+                        !/[\W_]/.test(password)) {
+                        passwordError.textContent = 'A senha deve ter pelo menos 8 caracteres, incluindo uma letra maiúscula, uma minúscula, um número e um caractere especial.';
+                        passwordError.style.display = 'block';
+                        return;
+                    }
+
+                    // Confirm password validation
+                    if (password !== confirmPassword) {
+                        confirmPasswordError.textContent = 'As senhas não coincidem.';
+                        confirmPasswordError.style.display = 'block';
+                        return;
+                    }
+
+                    if (token === null) {
+                        alert('Token nulo');
+                        return;
+                    }
+
+                    // Use the token directly in the URL path
+                    const response = await fetch(`/api/recuperar-senha/${token}`, {
+                        method: 'POST',
+                        headers: {
+                            'Content-Type': 'application/json'
+                        },
+                        body: JSON.stringify({
+                            token: token,
+                            senha: password,
+                            confirmarsenha: confirmPassword
+                        })
+                    });
+
+                    if (response.ok) {
+                        alert('Senha redefinida com sucesso. Abra seu aplicativo e faça login com sua nova senha.');
+                        document.getElementById('reset-form').reset();
+                    } else {
+                        const errorData = await response.json();
+                        alert(`Erro: ${errorData.error}`);
+                    }
+                });
+            });
+        </script>
+    </body>
+
+</html>

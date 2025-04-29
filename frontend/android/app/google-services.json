@@ -1,0 +1,54 @@
+{
+  "project_info": {
+    "project_number": "785012229258",
+    "project_id": "superando-limites-26cfd",
+    "storage_bucket": "superando-limites-26cfd.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:785012229258:android:291d9db2c0d9227f51d973",
+        "android_client_info": {
+          "package_name": "com.example.frontend"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "785012229258-gcopc1fge3heb2cou649l31qof9qpb4g.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.frontend",
+            "certificate_hash": "e6f6652046cac199762124873eaba117c321e8a8"
+          }
+        },
+        {
+          "client_id": "785012229258-db5krd73rhonitb3vhn1sbi9j8ra5tj5.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyByxdoO-0J83ShdOHz2zfITZuFv1DQeGdM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "785012229258-db5krd73rhonitb3vhn1sbi9j8ra5tj5.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "785012229258-5l8hspvp2qulfuei15nks21behjn53p2.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.frontend"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
