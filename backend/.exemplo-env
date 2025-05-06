@@ -1,0 +1,9 @@
+
+DB_USER = postgres
+DB_PASSWORD = admin
+DB_NAME = superando_limites
+DB_HOST = localhost
+IP = 192.168.0.56
+PORT = 3000
+GOOGLE_APPLICATION_CREDENTIALS = C:\Users\gabri\GitHub\superando_limites\backend\superando-limites-26cfd-firebase-adminsdk-x91on-7efdbae973.json
+DATABASE_URL = 'postgres://postgres:admin@localhost:5432/superando_limites'

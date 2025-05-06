@@ -1,0 +1,4 @@
+BASE_URL=http://192.168.56.1:3000/api
+BASE_URL_FOTO_PERFIL=https://storage.googleapis.com/superando_limites/fotosPerfil/
+BASE_URL_CAPA_EVENTO=https://storage.googleapis.com/superando_limites/fotosCapas/
+BASE_URL_COMPROVANTE_PAGAMENTO=https://storage.googleapis.com/superando_limites/comprovantes/ 
